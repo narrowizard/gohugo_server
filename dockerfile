@@ -7,4 +7,4 @@ FROM alpine:latest
 VOLUME ["/root/hugo"]
 COPY --from=builder /go/src/github.com/gohugoio/hugo/hugo /bin
 WORKDIR /root/hugo
-CMD ["/bin/hugo","server"]
+CMD ["/bin/hugo","server","--bind", "0.0.0.0"]
